@@ -5,14 +5,13 @@ def err = null
 properties([
   parameters([
     string(name: 'GIT_BRANCH', defaultValue: 'main', description: 'Branch to build/deploy'),
-    string(name: 'REPO_URL',   defaultValue: 'https://github.com/Monotype/EKS-Helm-deploy.git', description: 'Git repository URL'),
+    string(name: 'REPO_URL',   defaultValue: '<Git-URL>', description: 'Git repository URL'),
   ])
 ])
 
-// Hard‑coded settings
-def EKS_CLUSTER   = 'r360-nonprod'
-def AWS_ACCOUNT   = '043309366514'
-def K8S_NAMESPACE = 'jenkins-helm'
+// Hard‑coded settings'
+def AWS_ACCOUNT   = '<<accoutn -if>'
+def K8S_NAMESPACE = '<new-namespace>'
 def AWS_REGION    = 'us-east-1'
 def ts = new Date().format("yyyyMMddHHmmss")
 def imageName = "${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/jenkins-helm-img:${ts}"
