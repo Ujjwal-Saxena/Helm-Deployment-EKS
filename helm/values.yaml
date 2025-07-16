@@ -1,1 +1,15 @@
 
+image:
+  repository: nginx
+  tag: alpine
+  pullPolicy: IfNotPresent
+
+service:
+  name: nginx
+  type: ClusterIP
+  port: 80
+
+namespace: jenkins-helm
+replicaCount: 1
+
+resources: {}
